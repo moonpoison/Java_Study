@@ -12,3 +12,10 @@
   - `JDK` 및 `IntelliJ` 설치
   - IntelliJ 프로젝트 환경과 `Github` 연동
   - `git`의 구조 및 사용법에 대한 학습
+```mermaid
+graph TD
+A[Java 기초] --> B[객체지향 개념]
+B --> C[예외처리 & 파일입출력]
+C --> D[컬렉션 프레임워크]
+D --> E[멀티스레드 & 람다]
+E --> F[간단한 CLI 프로젝트]
