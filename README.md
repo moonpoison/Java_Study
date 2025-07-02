@@ -15,4 +15,4 @@
 ```mermaid
 graph TD
 A[학습 환경 설정] --> B[Git/Github 학습]
-A --> C[Java 기초 문법 학습]
+A --> C[Java 기초 문법 학습]ㅔ
