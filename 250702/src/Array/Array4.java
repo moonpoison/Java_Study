@@ -11,8 +11,12 @@ public class Array4 {
         int i = 0;
         while (i < arr.length) {
             int num = rand.nextInt(10) + 1;
-            if(!Arrays.asList(arr).contains(num)){
-                arr[i] = num;
+//            if(!Arrays.asList(arr).contains(num)){
+//                arr[i] = num;
+//                ++i;
+//            }
+            if(!Arrays.stream(arr).anyMatch(value -> value == num)){
+                arr[i]=num;
                 ++i;
             }
         }
