@@ -1,19 +1,19 @@
 package edu.sm.service;
 
-import edu.sm.dto.Cust;
+import edu.sm.dto.Product;
 import edu.sm.frame.ConnectionPool;
 import edu.sm.frame.SmService;
-import edu.sm.repository.CustRepository;
+import edu.sm.repository.ProductRepository;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public class CustService implements SmService<Cust, String> {
-    CustRepository custRepository;
+public class ProductService implements SmService<Product, Integer> {
+    ProductRepository prodRepository;
     ConnectionPool connectionPool;
-    public CustService() {
-        this.custRepository = new CustRepository();
+    public ProductService() {
+        this.prodRepository = new ProductRepository();
         try {
             connectionPool = ConnectionPool.create();
         } catch (SQLException e) {
@@ -22,12 +22,11 @@ public class CustService implements SmService<Cust, String> {
     }
 
     @Override
-    public void register(Cust cust) throws Exception {
+    public void register(Product prod) throws Exception {
         Connection conn = connectionPool.getConnection();
         try {
             conn.setAutoCommit(false);
-            custRepository.insert(cust, conn);
-            custRepository.insert(cust, conn);
+            prodRepository.insert(prod, conn);
             conn.commit();
         } catch (Exception e) {
             conn.rollback();
@@ -38,11 +37,11 @@ public class CustService implements SmService<Cust, String> {
     }
 
     @Override
-    public void modify(Cust cust) throws Exception {
+    public void modify(Product prod) throws Exception {
         Connection conn = connectionPool.getConnection();
         try {
             conn.setAutoCommit(false);
-            custRepository.update(cust, conn);
+            prodRepository.update(prod, conn);
             conn.commit();
         } catch (Exception e) {
             conn.rollback();
@@ -53,11 +52,11 @@ public class CustService implements SmService<Cust, String> {
     }
 
     @Override
-    public void remove(String s) throws Exception {
+    public void remove(Integer i) throws Exception {
         Connection conn = connectionPool.getConnection();
         try {
             conn.setAutoCommit(false);
-            custRepository.delete(s, conn);
+            prodRepository.delete(i, conn);
             conn.commit();
         } catch (Exception e) {
             conn.rollback();
@@ -68,12 +67,12 @@ public class CustService implements SmService<Cust, String> {
     }
 
     @Override
-    public List<Cust> get() throws Exception {
-        List<Cust> list = null;
+    public List<Product> get() throws Exception {
+        List<Product> list = null;
         Connection conn = connectionPool.getConnection();
         try {
             conn.setAutoCommit(false);
-            list = custRepository.selectAll(conn);
+            list = prodRepository.selectAll(conn);
             conn.commit();
         } catch (Exception e) {
             conn.rollback();
@@ -85,12 +84,12 @@ public class CustService implements SmService<Cust, String> {
     }
 
     @Override
-    public Cust get(String s) throws Exception {
-        Cust cust = null;
+    public Product get(Integer i) throws Exception {
+        Product prod = null;
         Connection conn = connectionPool.getConnection();
         try {
             conn.setAutoCommit(false);
-            cust = custRepository.select(s, conn);
+            prod = prodRepository.select(i, conn);
             conn.commit();
         } catch (Exception e) {
             conn.rollback();
@@ -98,6 +97,6 @@ public class CustService implements SmService<Cust, String> {
         } finally {
             if(conn != null) connectionPool.releaseConnection(conn);
         }
-        return cust;
+        return prod;
     }
 }

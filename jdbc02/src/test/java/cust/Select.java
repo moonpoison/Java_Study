@@ -4,18 +4,15 @@ import edu.sm.dto.Cust;
 import edu.sm.service.CustService;
 import org.junit.jupiter.api.Test;
 
-public class Insert {
+public class Select {
     @Test
     public void test1(){
-        System.out.println("Insert Test Start ...");
+        System.out.println("Select Test Start ...");
         CustService custService = new CustService();
-        Cust cust = Cust.builder()
-                .custId("id55")
-                .custPwd("pwd55")
-                .custName("대말")
-                .build();
         try {
-            custService.register(cust);
+            Cust cust = new Cust();
+            cust = custService.get("id01");
+            System.out.println(cust);
             System.out.println("Test End Successfully ...");
         } catch (Exception e) {
             System.out.println("Occured Exception During Test ...");
