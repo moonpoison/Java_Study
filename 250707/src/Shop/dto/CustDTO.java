@@ -1,4 +1,4 @@
-package Shop;
+package Shop.dto;
 
 public class CustDTO {
     private String id;

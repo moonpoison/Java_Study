@@ -6,7 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/250702/250702.iml" filepath="$PROJECT_DIR$/250702/250702.iml" />
       <module fileurl="file://$PROJECT_DIR$/250703/250703.iml" filepath="$PROJECT_DIR$/250703/250703.iml" />
       <module fileurl="file://$PROJECT_DIR$/250707/250707.iml" filepath="$PROJECT_DIR$/250707/250707.iml" />
+      <module fileurl="file://$PROJECT_DIR$/250708/250708.iml" filepath="$PROJECT_DIR$/250708/250708.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc.iml" filepath="$PROJECT_DIR$/jdbc.iml" />
     </modules>
   </component>
 </project>
